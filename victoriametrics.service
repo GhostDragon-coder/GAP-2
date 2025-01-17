@@ -1,0 +1,12 @@
+[Unit]
+Description=Victoria Metrics
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/local/bin/victoria-metrics-prod -storageDataPath=/var/lib/victoriametrics -retentionPeriod=2w
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
